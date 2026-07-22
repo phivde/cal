@@ -28,14 +28,18 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev
 
-      # 4. Exécuter le script R
+      # 4. Installer les packages R nécessaires
+      - name: Install R packages
+        run: Rscript -e 'install.packages("calendar", repos = "https://cloud.r-project.org")'
+
+      # 5. Exécuter le script R
       - name: Run R Script
         run: Rscript .github/script.r
         env:
           # Ajoutez vos secrets ici si vous utilisez une API de calendrier
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      # 5. Sauvegarder et pousser les modifications sur GitHub (ex: si le script génère un fichier .ics ou .pdf)
+      # 6. Sauvegarder et pousser les modifications sur GitHub (ex: si le script génère un fichier .ics ou .pdf)
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
