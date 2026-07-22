@@ -30,7 +30,7 @@ jobs:
 
       # 4. Exécuter le script R
       - name: Run R Script
-        run: Rscript /script.R
+        run: Rscript script.R
         env:
           # Ajoutez vos secrets ici si vous utilisez une API de calendrier
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
