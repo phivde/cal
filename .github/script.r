@@ -16,6 +16,6 @@ Extrait <- subset(Fusion,grepl('EECKAUT',SUMMARY))
 head(Extrait)
 
 # Ecriture du fichier filtré
-ic_write(ical(Extrait),  "Extrait.ics",zulu=2)
+ic_write(ical(Extrait),  "Extrait.ics",zulu=TRUE)
 # Ecriture du fichier global
 # ic_write(ical(Fusion),  "CEPE.ics")
