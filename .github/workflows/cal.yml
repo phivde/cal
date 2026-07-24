@@ -6,7 +6,10 @@ on:
   # Déclenche le script automatiquement (ex: tous les jours à minuit)
   schedule:
     - cron: '0 0 * * *'
-
+env:
+  TZ: "Europe/Paris"
+  LOCAL_TIME: "24:00"
+  
 jobs:
   run-r-script:
     runs-on: ubuntu-latest
