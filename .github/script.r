@@ -1,4 +1,5 @@
 library(calendar)
+Sys.setenv(TZ = "Europe/Paris")
 # library(tidyverse)
 # lecture M1 CEPE
 ics_M1 = ic_read("https://calendar.google.com/calendar/ical/mdjlce93a22mdeq2njgmgjujto%40group.calendar.google.com/public/basic.ics")
